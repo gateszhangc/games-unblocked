@@ -1,0 +1,42 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  reactCompiler: true,
+  
+  // 禁用图片优化，直接使用原始图�?
+  images: {
+    unoptimized: true,
+  },
+  
+  // 确保静态文件正确提�?
+  async rewrites() {
+    return [
+      {
+        source: '/media/:path*',
+        destination: '/media/:path*',
+      },
+      {
+        source: '/games/:path*',
+        destination: '/games/:path*',
+      },
+      {
+        source: '/',
+        destination: '/static-pages/index.html',
+      },
+      {
+        source: '/index.html',
+        destination: '/static-pages/index.html',
+      },
+      {
+        source: '/dublix.html',
+        destination: '/static-pages/dublix.html',
+      },
+      {
+        source: '/:path*.html',
+        destination: '/static-pages/:path*.html',
+      },
+    ];
+  },
+};
+
+export default nextConfig;
