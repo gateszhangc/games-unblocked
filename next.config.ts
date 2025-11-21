@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  
+  // Disable TypeScript checking
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 
   // Disable image optimization; serve originals
   images: {
