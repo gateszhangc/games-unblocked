@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         destination: '/dublix.html',
         permanent: true,
       },
+      {
+        source: '/papas-scooperia',
+        destination: '/papas-scooperia.html',
+        permanent: true,
+      },
     ];
   },
 
